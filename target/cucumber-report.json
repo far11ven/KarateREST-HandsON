@@ -1,0 +1,279 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 62,
+        "name": "POST data using API",
+        "description": "",
+        "id": "to-verify-various-features-of-karate-framework;post-data-using-api",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1018295188,
+              "status": "passed"
+            },
+            "line": 64,
+            "name": "url \u0027https://reqres.in/api/users\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027https://reqres.in/api/users\u0027",
+                  "offset": 4
+                }
+              ],
+              "location": "StepDefs.url(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 218267681,
+              "status": "passed"
+            },
+            "line": 65,
+            "name": "request read(\u0027request.json\u0027)",
+            "match": {
+              "arguments": [
+                {
+                  "val": "read(\u0027request.json\u0027)",
+                  "offset": 8
+                }
+              ],
+              "location": "StepDefs.request(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1685372598,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 66,
+                "value": "#And request { \"name\": \"Kushal\",  \"job\": \"leader\" }"
+              }
+            ],
+            "line": 67,
+            "name": "method post",
+            "match": {
+              "arguments": [
+                {
+                  "val": "post",
+                  "offset": 7
+                }
+              ],
+              "location": "StepDefs.method(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 745078,
+              "status": "passed"
+            },
+            "line": 68,
+            "name": "status 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 7
+                }
+              ],
+              "location": "StepDefs.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 12623985,
+              "status": "passed"
+            },
+            "line": 69,
+            "name": "print responseTime",
+            "match": {
+              "arguments": [
+                {
+                  "val": "responseTime",
+                  "offset": 6
+                }
+              ],
+              "location": "StepDefs.print(String)"
+            },
+            "keyword": "* "
+          },
+          {
+            "result": {
+              "duration": 10543084,
+              "status": "passed"
+            },
+            "line": 70,
+            "name": "print responseHeaders",
+            "match": {
+              "arguments": [
+                {
+                  "val": "responseHeaders",
+                  "offset": 6
+                }
+              ],
+              "location": "StepDefs.print(String)"
+            },
+            "keyword": "* "
+          },
+          {
+            "result": {
+              "duration": 12397206,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 71,
+                "value": "## Matching specific header type from header"
+              }
+            ],
+            "line": 72,
+            "name": "match header Content-Type contains \u0027application\u0027",
+            "match": {
+              "arguments": [
+                {},
+                {
+                  "val": "header",
+                  "offset": 6
+                },
+                {
+                  "val": " Content-Type",
+                  "offset": 12
+                },
+                {},
+                {},
+                {
+                  "val": " \u0027application\u0027",
+                  "offset": 34
+                }
+              ],
+              "location": "StepDefs.matchContains(String,String,String,String,String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 30465966,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 73,
+                "value": "## Getting specific header type from header"
+              }
+            ],
+            "line": 74,
+            "name": "def serverType \u003d responseHeaders[\u0027Server\u0027][0]",
+            "match": {
+              "arguments": [
+                {
+                  "val": "serverType",
+                  "offset": 4
+                },
+                {
+                  "val": "responseHeaders[\u0027Server\u0027][0]",
+                  "offset": 17
+                }
+              ],
+              "location": "StepDefs.def(String,String)"
+            },
+            "keyword": "* "
+          },
+          {
+            "result": {
+              "duration": 8730959,
+              "status": "passed"
+            },
+            "line": 75,
+            "name": "print serverType",
+            "match": {
+              "arguments": [
+                {
+                  "val": "serverType",
+                  "offset": 6
+                }
+              ],
+              "location": "StepDefs.print(String)"
+            },
+            "keyword": "* "
+          },
+          {
+            "result": {
+              "duration": 21698961,
+              "status": "passed"
+            },
+            "line": 76,
+            "name": "print response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "response",
+                  "offset": 6
+                }
+              ],
+              "location": "StepDefs.print(String)"
+            },
+            "keyword": "* "
+          },
+          {
+            "result": {
+              "duration": 27467455,
+              "status": "passed"
+            },
+            "comments": [
+              {
+                "line": 77,
+                "value": "#* def rs \u003d read(\u0027expected.json\u0027)"
+              },
+              {
+                "line": 78,
+                "value": "#* match response \u003d\u003d rs"
+              }
+            ],
+            "line": 79,
+            "name": "match response \u003d\u003d read(\u0027d:/expected.json\u0027)",
+            "match": {
+              "arguments": [
+                {},
+                {
+                  "val": "response",
+                  "offset": 6
+                },
+                {},
+                {
+                  "val": "\u003d\u003d",
+                  "offset": 15
+                },
+                {
+                  "val": "read(\u0027d:/expected.json\u0027)",
+                  "offset": 18
+                }
+              ],
+              "location": "StepDefs.matchEquals(String,String,String,String,String)"
+            },
+            "keyword": "* "
+          }
+        ],
+        "tags": [
+          {
+            "line": 61,
+            "name": "@test5"
+          }
+        ]
+      }
+    ],
+    "name": "To verify Various features of karate Framework",
+    "description": "",
+    "id": "to-verify-various-features-of-karate-framework",
+    "keyword": "Feature",
+    "uri": "./src/test/java/com/runner/karatefeature.feature"
+  }
+]
