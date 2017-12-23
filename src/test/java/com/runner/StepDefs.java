@@ -27,7 +27,7 @@ public class StepDefs {
 	@Before
 	public void setUp(Scenario scenario){
 
-		System.setProperty("webdriver.chrome.driver", "D:\\Selenium\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\eclipse\\Selenium\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 

@@ -62,8 +62,8 @@ And print responseStatus
 Scenario: POST data using API
 
 Given url 'https://reqres.in/api/users'
-And request read('request.json')
-#And request { "name": "Kushal",  "job": "leader" }
+#And request read('request.json')
+And request { "name": "Kushal",  "job": "leader" }
 When method post
 Then status 201
 * print responseTime
@@ -74,6 +74,27 @@ Then match header Content-Type contains 'application'
 * def serverType = responseHeaders['Server'][0]
 * print serverType
 * print response
-#* def rs = read('expected.json')
-#* match response == rs
+* def rs = read('expected.json')
+* match response == rs
+* match response == read('d:/expected.json')
+
+
+@test6
+Scenario: POST data using API
+
+Given url 'https://reqres.in/api/users'
+#And request read('request.json')
+And request { "name": "Kushal",  "job": "leader" }
+When method post
+Then status 201
+* print responseTime
+* print responseHeaders
+## Matching specific header type from header
+Then match header Content-Type contains 'application'
+## Getting specific header type from header
+* def serverType = responseHeaders['Server'][0]
+* print serverType
+* print response
+* def rs = read('expected.json')
+* match response == rs
 * match response == read('d:/expected.json')
